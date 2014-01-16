@@ -13,11 +13,13 @@
         <label for="toggle-all">Mark all as complete</label>
         <ul id="todo-list"></ul>
     </section>
-    <footer id="footer"></footer>
+    <footer id="footer">
+        <a id="clear-completed">Clear completed</a>
+
+        <div id="todo-count"></div>
+    </footer>
 </section>
 </body>
-<script data-main="../static/app/js/main"
-        th:attr="data-main=@{/app/js/main}"
-        src="../static/vendor/requirejs/require.js"
-        th:src="@{/vendor/requirejs/require.js}"></script>
+<script data-main="app/js/main"
+        src="vendor/requirejs/require.js"></script>
 </html>
