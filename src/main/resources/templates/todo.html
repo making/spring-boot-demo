@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+<section id="todoapp">
+    <header id="header">
+        <h1>todos</h1>
+        <input id="new-todo" placeholder="What needs to be done?" autofocus="autofocus"/>
+    </header>
+    <section id="main">
+        <input id="toggle-all" type="checkbox"/>
+        <label for="toggle-all">Mark all as complete</label>
+        <ul id="todo-list"></ul>
+    </section>
+    <footer id="footer"></footer>
+</section>
+</body>
+<script data-main="../static/app/js/main"
+        th:attr="data-main=@{/app/js/main}"
+        src="../static/vendor/requirejs/require.js"
+        th:src="@{/vendor/requirejs/require.js}"></script>
+</html>
