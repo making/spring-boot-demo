@@ -10,8 +10,6 @@ import java.util.List;
 @Transactional
 public class TodoService {
     @Inject
-    TodoSettings settings;
-    @Inject
     TodoRepository todoRepository;
 
     public List<Todo> findAll() {

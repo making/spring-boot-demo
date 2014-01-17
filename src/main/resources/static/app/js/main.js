@@ -35,8 +35,12 @@ require.config({
 
 define(function (require) {
     var $ = require('jquery');
+    var AppView = require('app/js/views/AppView');
 
     $(document).ready(function () {
-        alert('Good!');
+        //alert('Good!');
+        new AppView({
+            el: $('#todoapp')
+        });
     });
 });
