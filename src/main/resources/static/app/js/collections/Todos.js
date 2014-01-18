@@ -5,7 +5,7 @@ define(function (require) {
     var Backbone = require('backbone');
 
     return Backbone.Collection.extend({
-        url: 'http:/localhost:8080/api/todos',
+        url: 'http://localhost:8080/api/todos',
         comparator: function (todo) {
             return todo.get('createdDate');
         }

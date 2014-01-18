@@ -10,6 +10,8 @@
         "backbone.validation": "0.7.1",
         "handlebars": "1.1.2",
         "requirejs": "2.1.10",
-        "requirejs-text": "2.0.10"
+        "requirejs-text": "2.0.10",
+        "sockjs": "0.3.4",
+        "stomp-websocket": "2.3.0"
     }
 }

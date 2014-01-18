@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello WebSocket</title>
+    <script src="vendor/sockjs/sockjs.js"></script>
+    <script src="vendor/stomp-websocket/lib/stomp.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/lodash/dist/lodash.min.js"></script>
+    <script src="vendor/backbone/backbone-min.js"></script>
+
+
+</head>
+<body>
+<div id="app">
+    <div>
+        <button id="connect">Connect</button>
+        <button id="disconnect">Disconnect</button>
+    </div>
+    <div id="conversationDiv">
+        <button id="like">Like!</button>
+        <p id="result"></p>
+    </div>
+</div>
+
+<script>
+    var MyView = Backbone.View.extend({
+        el: $('#app'),
+        events: {
+            'click #connect': 'connect',
+            'click #disconnect': 'disconnect',
+            'click #like': 'like'
+        },
+        initialize: function () {
+            this.connected = false;
+            this.$connect = this.$('#connect');
+            this.$disconnect = this.$('#disconnect');
+            this.$like = this.$('#like');
+            this.$result = this.$('#result');
+            this.setButtonState(false);
+        },
+        connect: function () {
+            var socket = new SockJS('/like');
+            this.stompClient = Stomp.over(socket);
+            this.stompClient.connect('guest', 'guest', _.bind(this.onConnected, this));
+        },
+        disconnect: function () {
+            this.stompClient.disconnect();
+            console.log("Disconnected");
+            this.setButtonState(false);
+        },
+        like: function () {
+            this.stompClient.send("/app/like");
+        },
+        onConnected: function (frame) {
+            console.log('Connected: ', frame);
+            this.setButtonState(true);
+            this.stompClient.subscribe('/topic/like', _.bind(this.onSubscribe, this));
+        },
+        onSubscribe: function (response) {
+            this.model = new Backbone.Model(JSON.parse(response.body));
+            this.render();
+        },
+        render: function () {
+            if (this.model) {
+                this.$result.text(this.model.get('total') + ' ' + new Date(this.model.get('lastModifiedAt')));
+            }
+            return this;
+        },
+        setButtonState: function (connected) {
+            this.$connect.attr('disabled', connected);
+            this.$disconnect.attr('disabled', !connected);
+            this.$like.attr('disabled', !connected);
+        }
+    });
+
+    $(function () {
+        new MyView();
+    });
+</script>
+</body>
+</html>

@@ -15,7 +15,6 @@ public class TodoController {
     @Inject
     TodoService todoService;
 
-
     @RequestMapping(method = RequestMethod.GET)
     public List<Todo> getTodos() {
         List<Todo> todos = todoService.findAll();

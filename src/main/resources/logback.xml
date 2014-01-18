@@ -18,4 +18,5 @@
                   <!--value="date:%d{yyyy-MM-dd HH:mm:ss}\tpid:${PID:- }\tthread:%thread\tX-Track:%X{X-Track}\tlevel:%-5level\tlogger:%-48logger{48}\tmessage:%msg%n"/>-->
     </include>
     <logger name="org.hibernate.engine.transaction" level="DEBUG"/>
+    <logger name="demo" level="DEBUG"/>
 </configuration>

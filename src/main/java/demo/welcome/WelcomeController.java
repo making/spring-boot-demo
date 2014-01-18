@@ -13,8 +13,8 @@ public class WelcomeController {
         return "hello world!";
     }
 
-    @RequestMapping("/todo")
-    public String todo() {
-        return "todo";
-    }
+//    @RequestMapping("/todo")
+//    public String todo() {
+//        return "todo";
+//    }
 }
