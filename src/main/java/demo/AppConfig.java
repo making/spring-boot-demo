@@ -1,10 +1,7 @@
 package demo;
 
-import org.springframework.boot.autoconfigure.jdbc.EmbeddedDataSourceConfiguration;
-import org.springframework.boot.autoconfigure.jdbc.TomcatDataSourceConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabase;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
@@ -19,8 +16,8 @@ public class AppConfig {
         EmbeddedDatabase db = new EmbeddedDatabaseBuilder()
                 .setName("demo")
                 .setType(EmbeddedDatabaseType.HSQL)
-                //.addScript("schema.sql")
-                //.addScript("data.sql")
+                .addScript("schema.sql")
+                .addScript("data.sql")
                 .build();
         return db;
     }

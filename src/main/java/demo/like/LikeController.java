@@ -1,9 +1,5 @@
 package demo.like;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
@@ -13,7 +9,6 @@ import java.util.concurrent.atomic.AtomicLong;
 
 @Controller
 public class LikeController {
-    private static Logger logger = LoggerFactory.getLogger(LikeController.class);
     AtomicLong likes = new AtomicLong(0);
 
     @MessageMapping("/like")
@@ -22,8 +17,8 @@ public class LikeController {
         return new Like(likes.incrementAndGet(), new Date());
     }
 
-    @Data
-    @AllArgsConstructor
+    @lombok.Data
+    @lombok.AllArgsConstructor
     static class Like {
         private long total;
         private Date lastModifiedAt;
