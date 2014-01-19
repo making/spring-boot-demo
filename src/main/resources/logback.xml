@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-
-    <!--
-
-    This file is the default logback configuration for Spring Boot. To use the same
-    defaults and add custom logger levels you can copy this file and add additional
-    overrides, e.g:
-
     <include resource="org/springframework/boot/logging/logback/base.xml"/>
-    <logger name="org.springframework.web" level="DEBUG"/>
-    ...
-
-    -->
-
-    <include resource="org/springframework/boot/logging/logback/base.xml">
-        <!--<property name="FILE_LOG_PATTERN"-->
-                  <!--value="date:%d{yyyy-MM-dd HH:mm:ss}\tpid:${PID:- }\tthread:%thread\tX-Track:%X{X-Track}\tlevel:%-5level\tlogger:%-48logger{48}\tmessage:%msg%n"/>-->
-    </include>
     <logger name="org.hibernate.engine.transaction" level="DEBUG"/>
     <logger name="demo" level="DEBUG"/>
 </configuration>
