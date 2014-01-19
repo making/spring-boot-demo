@@ -11,14 +11,14 @@ import javax.sql.DataSource;
 @Configuration
 public class AppConfig {
 
-    @Bean(destroyMethod = "shutdown")
-    DataSource dataSource() {
-        EmbeddedDatabase db = new EmbeddedDatabaseBuilder()
-                .setName("demo")
-                .setType(EmbeddedDatabaseType.HSQL)
-                .addScript("schema.sql")
-                .addScript("data.sql")
-                .build();
-        return db;
-    }
+//    @Bean(destroyMethod = "shutdown")
+//    DataSource dataSource() {
+//        EmbeddedDatabase db = new EmbeddedDatabaseBuilder()
+//                .setName("demo")
+//                .setType(EmbeddedDatabaseType.HSQL)
+//                .addScript("schema.sql")
+//                .addScript("data.sql")
+//                .build();
+//        return db;
+//    }
 }

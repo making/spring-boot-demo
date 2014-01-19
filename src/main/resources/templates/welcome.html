@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Welcome</title>
+    <meta charset="UTF-8"/>
+    <link href="../static/vendor/bootstrap/dist/css/bootstrap.css"
+          th:href="@{/vendor/bootstrap/dist/css/bootstrap.css}" rel="stylesheet"/>
+    <style>
+        body {
+            padding-top: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="alert alert-success">
+        現在時刻: <span th:text="${now}">now</span>
+    </div>
+</div>
+</body>
+</html>
