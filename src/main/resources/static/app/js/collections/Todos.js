@@ -6,7 +6,7 @@ define(function (require) {
 
     return Backbone.Collection.extend({
         model: Todo,
-        url: 'http://localhost:8080/api/todos',
+        url: 'api/todos',
         comparator: function (a, b) {
             var aIsFinished = a.get('finished');
             var bIsFinished = b.get('finished');

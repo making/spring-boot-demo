@@ -6,7 +6,7 @@ define(function (require) {
 
     return Backbone.Model.extend({
         idAttribute: 'todoId',
-        urlRoot: 'http://localhost:8080/api/todos',
+        urlRoot: 'api/todos',
         defaults: {
             todoTitle: '',
             finished: false
