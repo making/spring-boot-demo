@@ -23,9 +23,6 @@ define(function (require) {
 
             this.todos = new Todos();
             this.listenTo(this.todos, 'sync', this.render);
-            this.listenTo(this.todos, 'sort', function() {
-                console.log(arguments);
-            });
             this.todos.fetch();
         },
         render: function () {
