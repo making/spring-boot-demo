@@ -4,14 +4,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Controller
 public class WelcomeController {
     @RequestMapping("/")
     public String hello(Model model) {
         model.addAttribute("now",
-                new Date());
+                LocalDateTime.now());
         return "welcome";
     }
 

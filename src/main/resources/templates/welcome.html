@@ -16,11 +16,21 @@
     <div class="alert alert-success">
         現在時刻: <span th:text="${now}">now</span>
     </div>
+    <h3>デモ</h3>
     <ul>
         <li><a href="../static/todo.html" th:href="@{/todo.html}">REST APIを使ったデモ (Todoアプリ)</a></li>
         <li><a href="../static/like.html" th:href="@{/like.html}">STOMPを使ったデモ (Likeアプリ)</a></li>
-        <li><a href="../static/actuator.html" th:href="@{/actuator}">spring-boot-actuatorのデモ</a></li>
+        <li><a href="actuator.html" th:href="@{/actuator}">spring-boot-actuatorのデモ</a></li>
     </ul>
+    <h3>ソースコード</h3>
+    <ul>
+        <li><a href="https://github.com/making/spring-boot-demo">Github</a></li>
+        <li>
+            <a href="https://github.com/making/spring-boot-demo/releases/download/jjug-night-seminar-201401/demo-1.0-SNAPSHOT.jar">demo-1.0-SNAPSHOT.jar</a>
+        </li>
+    </ul>
+    <h4>実行方法</h4>
+    <pre><code>java -jar demo-1.0-SNAPSHOT.jar</code></pre>
 </div>
 </body>
 </html>
