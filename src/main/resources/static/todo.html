@@ -2,22 +2,46 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link href="vendor/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="vendor/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet">
     <style>
         #todo-list .edit {
             display: none;
         }
+
         #todo-list {
             margin: 10px 0;
             padding: 0;
             list-style: none;
         }
+
+        #todo-list li.finished label {
+            color: #777777;
+            text-decoration: line-through;
+        }
+
+        #todo-list li.editing .view {
+            display: none;
+        }
+
+        #todo-list li.editing .edit {
+            display: block;
+        }
+
+        #clear-finished {
+            display: none;
+        }
+
+        input.form-control {
+            width: 300px;
+        }
     </style>
 </head>
 <body>
-<section id="todoapp">
+<section id="todoapp" class="container">
     <header id="header">
-        <h1>todos</h1>
-        <input id="new-todo" placeholder="What needs to be done?" autofocus="autofocus"/>
+        <h1>Todos</h1>
+        <input id="new-todo" class="form-control" placeholder="What needs to be done?" autofocus="autofocus"/>
     </header>
     <section id="main">
         <input id="toggle-all" type="checkbox"/>
@@ -25,9 +49,9 @@
         <ul id="todo-list"></ul>
     </section>
     <footer id="footer">
-        <a id="clear-completed">Clear completed</a>
-
-        <div id="todo-count"></div>
+        <button id="clear-finished" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Clear
+            finished items
+        </button>
     </footer>
 </section>
 </body>
