@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>spring-boot-actuator</title>
+    <meta charset="UTF-8" />
+    <link href="../static/vendor/bootstrap/dist/css/bootstrap.css"
+          th:href="@{/vendor/bootstrap/dist/css/bootstrap.css}" rel="stylesheet"/>
+</head>
+<body>
+<div id="app" class="container">
+    <h2>spring-boot-actuator</h2>
+
+    <p>username: demo<br />
+        password: demo
+    </p>
+    <ul>
+        <li><a th:href="@{/metrics}">/metrics</a></li>
+        <li><a th:href="@{/env}">/env</a></li>
+        <li><a th:href="@{/dump}">/dump</a></li>
+        <li><a th:href="@{/health}">/health</a></li>
+        <li><a th:href="@{/beans}">/beans</a></li>
+        <li><a th:href="@{/autoconfig}">/autoconfig</a></li>
+        <li><a th:href="@{/info}">/info</a></li>
+    </ul>
+</div>
+</body>
+</html>

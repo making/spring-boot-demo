@@ -14,4 +14,9 @@ public class WelcomeController {
                 new Date());
         return "welcome";
     }
+
+    @RequestMapping("/actuator")
+    public String actuator() {
+        return "actuator";
+    }
 }
